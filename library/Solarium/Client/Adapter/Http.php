@@ -64,7 +64,28 @@ class Solarium_Client_Adapter_Http extends Solarium_Client_Adapter
         return new Solarium_Client_Response($data, $headers);
     }
 
-    /**
+  public function getBaseUri()
+  {
+    $uri = 'http://';
+
+    if ($user = $this->getUser()) {
+      $uri .= $user;
+      if ($password = $this->getPassword()) {
+        $uri .= ':'.$this->getPassword();
+      }
+      $uri .= '@';
+    }
+    $uri .= $this->getHost() . ':' . $this->getPort() . $this->getPath() . '/';
+
+    $core = $this->getCore();
+    if (!empty($core)) {
+      $uri .= $core.'/';
+    }
+
+    return $uri;
+  }
+
+  /**
      * Check result of a request
      *
      * @throws Solarium_Client_HttpException

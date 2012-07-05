@@ -66,11 +66,13 @@ abstract class Solarium_Client_Adapter extends Solarium_Configurable
      * @var array
      */
     protected $_options = array(
-        'host'    => '127.0.0.1',
-        'port'    => 8983,
-        'path'    => '/solr',
-        'core'    => null,
-        'timeout' => 5,
+        'host'     => '127.0.0.1',
+        'port'     => 8983,
+        'path'     => '/solr',
+        'user'     => null,
+        'password' => null,
+        'core'     => null,
+        'timeout'  => 5,
     );
 
     /**
@@ -198,6 +200,23 @@ abstract class Solarium_Client_Adapter extends Solarium_Configurable
     {
         return $this->getOption('timeout');
     }
+
+  public function getUser() {
+    return $this->getOption('user');
+  }
+
+  public function setUser($user) {
+    $this->_setOption('user', $user);
+  }
+
+  public function getPassword() {
+    return $this->getOption('password');
+  }
+
+  public function setPassword($password) {
+    return $this->getOption('password');
+  }
+
 
     /**
      * Execute a request
