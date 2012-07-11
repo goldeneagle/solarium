@@ -56,9 +56,9 @@ class Solarium_Client_RequestBuilder_Update extends Solarium_Client_RequestBuild
         $request = parent::build($query);
         $request->setMethod(Solarium_Client_Request::METHOD_POST);
         $request->setRawData($this->getRawData($query));
-      $request->removeParam("wt");
-      $request->addParam("wt", "xml");
-
+//      $request->removeParam("wt");
+//      $request->addParam("wt", "xml");
+//
         return $request;
     }
 
