@@ -687,7 +687,7 @@ class Solarium_Query_Select extends Solarium_Query
     /**
      * Get all filterqueries
      *
-     * @return array
+     * @return \Solarium_Query_Select_FilterQuery[]
      */
     public function getFilterQueries()
     {
