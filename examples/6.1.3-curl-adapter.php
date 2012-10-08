@@ -3,14 +3,14 @@
 require_once 'Zend/Loader/Autoloader.php';
 $loader = Zend_Loader_Autoloader::getInstance();
 
-require('init.php');
+require(__DIR__.'/init.php');
 htmlHeader();
 
 // create a client instance
-$client = new Solarium_Client($config);
+$client = new Solarium\Client($config);
 
 // set the adapter to curl
-$client->setAdapter('Solarium_Client_Adapter_Curl');
+$client->setAdapter('Solarium\Core\Client\Adapter\Curl');
 
 // get a select query instance
 $query = $client->createSelect();
