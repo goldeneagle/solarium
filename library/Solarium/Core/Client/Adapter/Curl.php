@@ -138,6 +138,7 @@ class Curl extends Configurable implements AdapterInterface
     public function createHandle($request, $endpoint)
     {
         // @codeCoverageIgnoreStart
+        $endpoint->setOptions($this->getOptions());
         $uri = $endpoint->getBaseUri() . $request->getUri();
         $method = $request->getMethod();
         $options = $this->createOptions($request, $endpoint);
