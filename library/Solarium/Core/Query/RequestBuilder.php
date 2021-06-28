@@ -89,7 +89,7 @@ abstract class RequestBuilder implements RequestBuilderInterface
             }
 
             if (is_array($paramValue)) {
-                $paramValue = implode($paramValue, ',');
+                $paramValue = implode(',', $paramValue);
             }
 
             $params .= $paramName . '=' . $paramValue . ' ';
